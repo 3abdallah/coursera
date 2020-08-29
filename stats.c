@@ -35,10 +35,90 @@ void main() {
 
   /* Other Variable Declarations Go Here */
 
-       
+        float mean = find_mean(test, SIZE);
+        float median = find_median(test, SIZE);
+        unsigned char min = find_minimum(test, SIZE);
+        unsigned char max = find_maximum(test, SIZE);
   /* Statistics and Printing Functions Go Here */
-        
+        print_statistics(mean, median, min, max);
+        printf("\nArray before sorting : \n");
+        print_array(test, SIZE);
+
+        printf("\nArray after sorting in descending order : \n");
+        sort_array(test, SIZE);  
+	print_array(test, SIZE);
 }
 
 /* Add other Implementation File Code Here */
+void print_statistics(float mean,float median,unsigned char min ,unsigned char max){
+	printf("Mean: %f \n", mean);
+	printf("Median: %f \n", median);
+	printf("Minimum: %u \n", min);
+	printf("Maximum: %u \n", max);
+}
+
+void print_array (unsigned char test[] ,unsigned char size ){
+    for(char i=0;i<size;i++){
+       printf("%d \t ",test[i] );
+    }   
+}
+void sort_array (unsigned char test[],unsigned char size ){
+	unsigned char temp ;
+	for(char i=0;i<size;i++ ){
+	   for(char j=i;j<size;j++){
+		   if(test[i]<test[j]){
+			   temp=test[i];
+			   test[i]=test[j];
+			   test[j]=temp;
+		   }
+	   }
+	}
+
+}
+unsigned char find_maximum(unsigned char test[],unsigned char size){
+         unsigned char max= test[0];
+	 for(char i=0;i<size;i++){
+	   if(max<test[i]){
+	     max=test[i];
+	   }
+	 }
+	 return max;
+}
+unsigned char find_minimum(unsigned char test[],unsigned char size){
+        unsigned char mini= test[0];
+         for(char i=0;i<size;i++){
+           if(mini>test[i]){
+	    mini=test[i];
+           }
+	 }
+	   return mini;
+}
+float find_mean(unsigned char test[],unsigned char size){
+     float mean=0;
+     for(char i=0;i<size;i++){
+       mean+=test[i];
+     }
+     mean/=size;
+     return mean;
+}
+float find_median(unsigned char test[],unsigned char size){
+   unsigned char temp ;
+   float mid=0 ;
+        for(char i=0;i<size;i++ ){
+	    for(char j=i;j<size;j++){
+                if(test[i]<test[j]){
+	          temp=test[i];
+		  test[i]=test[j]; 
+		  test[j]=temp;        
+	      	}
+           }
+        }
+	if(size%2==0){
+	  mid =test[(size/2)-1]+test[size/2];
+	 return mid/2; 
+	}else{
+		mid=test[size/2];
+		return mid/2;
+	}
+}
 

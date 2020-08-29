@@ -21,20 +21,82 @@
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
 
+void print_statistics(float mean,float median,unsigned char min ,unsigned char max);
 /**
- * @brief <Add Brief Description of Function Here>
- *
+ * 
+ * A function that prints the statistics of an array including minimum, maximum, mean, and median.
  * <Add Extended Description Here>
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param <mean> : the mean of ann array
+ * @param <median> <median of an array>
+ * @param <min> <the smallest number in array>
+ * @param <max> <the largest number in array>
  *
- * @return <Add Return Informaiton here>
+ * @return <return nothing but printg values>
  */
 
+void print_array (unsigned char test[] ,unsigned char size );
+/**
+ * 
+ *  Given an array of data and a length, prints the array to the screen.
+ * <Add Extended Description Here>
+ *
+ * @param <test[]> :  unsigned char pointer to an n-element data array
+ * @param <size> <An unsigned integer as the size of the array>
+ * @return <return nothing but printg array elements>
+ */
+
+void  sort_array (unsigned char test[],unsigned char size );
+/**
+ * 
+ *Given an array of data and a length, sorts the array from largest to smallest. (The zeroth Element the       *largest value, and the last element (n-1)the smallest value. )
+ * <Add Extended Description Here>
+ *
+ * @param <test[]> :  unsigned char pointer to an n-element data array
+ * @param <size> <An unsigned integer as the size of the array>
+ * @return <return nothing >
+ */
+
+unsigned char find_maximum(unsigned char test[],unsigned char size);
+/**
+ * 
+ *  Given an array of data and a length, returns the maximum.
+ * <Add Extended Description Here>
+ *
+ * @param <test[]> :  unsigned char pointer to an n-element data array
+ * @param <size> <An unsigned integer as the size of the array>
+ * @return <return the maximum number>
+ */
+unsigned char find_minimum(unsigned char test[],unsigned char size);
+/**
+ * 
+ *  Given an array of data and a length, returns the minimum.
+ * <Add Extended Description Here>
+ *
+ * @param <test[]> :  unsigned char pointer to an n-element data array
+ * @param <size> <An unsigned integer as the size of the array>
+ * @return <return the minimum number>
+ */
+float find_mean(unsigned char test[],unsigned char size);
+/**
+ * 
+ *  Given an array of data and a length, returns the mean.
+ * <Add Extended Description Here>
+ *
+ * @param <test[]> :  unsigned char pointer to an n-element data array
+ * @param <size> <An unsigned integer as the size of the array>
+ * @return <return the mean value >
+ */
+float find_median(unsigned char test[],unsigned char size);
+/**
+ * 
+ *  Given an array of data and a length, returns the median value.
+ * <Add Extended Description Here>
+ *
+ * @param <test[]> :  unsigned char pointer to an n-element data array
+ * @param <size> <An unsigned integer as the size of the array>
+ * @return <returns the median value >
+ */
 #endif 
 /* __STATS_H__ */
